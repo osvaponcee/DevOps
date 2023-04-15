@@ -65,7 +65,7 @@ After that, you need to run the image, it means build the container using the im
 * Run the command: `Docker ps -a` to verify if the container was created and is running.
 * Then you can go at `http://localhost:3000` in order to check if the application is running.
 
-##3. Create a CI pipeline 
+## 3. Create a CI pipeline 
 On this step you'll use the GitHub actions.
 * Go to the repository forked and put on the main path.
 * Here you have the folder `.github/workflows`. 
@@ -79,7 +79,7 @@ On this step you'll use the GitHub actions.
     * Login into the DockerHub
     * Push the image at the DockerHub
 
-##3. Update the text from the application using Ansible
+## 4. Update the text from the application using Ansible
 Here, you use Ansible to change the text from the application. This works in your local repository.
 * First, get the image from DockerHub: `docker pull osvaldoponce01/capstone_project:0.0.1` to get the image on your machine.
 * Run the image with the command: `Docker run -d -p 3000:3000 --name <container_name_you_prefer> <image_name>`. To check the current text on the application.
