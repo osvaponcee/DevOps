@@ -31,7 +31,7 @@ In this project put all the tools learned in the bootcamp in order to create a D
 Firstly, you need to get the link for the forked repository.
 * Fork repository: https://github.com/osvaponcee/DevOps.git
 * After that, clone it as your local repository:
-* Clone the repository : **`git clone SSH link repository`**
+ * Clone the repository : **`git clone SSH <link_repository>`**
 
 ### Application
 After, you need to verify the application you will use for this project.
