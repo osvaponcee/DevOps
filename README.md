@@ -31,7 +31,7 @@ In this project put all the tools learned in the bootcamp in order to create a D
 Firstly, you need to get the link for the forked repository.
 * Fork repository: https://github.com/osvaponcee/DevOps.git
 * After that, clone it as your local repository:
- * Clone the repository : **`git clone SSH <link_repository>`**
+  * Clone the repository : **`git clone SSH <link_repository>`**
 
 ### Application
 After, you need to verify the application you will use for this project.
@@ -46,13 +46,13 @@ Using Docker, you will containerize the application in your local repository, st
 * First, you need to go to the path: `capstone_project/hello-world/`. Here is the Dockerfile.
 * Put the command: `docker build -t <image_name_you_prefer> .` This command create the image from the Dockerfile.
   * The Dockerfile contains:
-  * Works from Ubuntu OS.
-  * Install all the necessary packages to work: *ssh, sshpass, nodejs, npm*.
-  * Copy all the files into another folder path inside the image.
-  * Use `/app/src` as work directory.
-  * Install all the dependencies from `package.json` file.
-  * Configure the ansible user for the connection.
-  * Run the *service ssh start* and the *npm start* commands in order to start the SSH communication and start the application (only applies running the      image.).
+   * Works from Ubuntu OS.
+   * Install all the necessary packages to work: *ssh, sshpass, nodejs, npm*.
+   * Copy all the files into another folder path inside the image.
+   * Use `/app/src` as work directory.
+   * Install all the dependencies from `package.json` file.
+   * Configure the ansible user for the connection.
+   * Run the *service ssh start* and the *npm start* commands in order to start the SSH communication and start the application (only applies running the      image.).
 
 After that, you need to run the image, it means build the container using the image as you create before.
 * Check if the image was created.
