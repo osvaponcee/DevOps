@@ -82,7 +82,7 @@ On this step you'll use the GitHub actions.
 ## 4. Update the text from the application using Ansible
 Here, you use Ansible to change the text from the application. This works in your local repository.
 * First, get the image from DockerHub: `docker pull osvaldoponce01/capstone_project:0.0.1` to get the image on your machine.
-* Run the image with the command: `Docker run -d -p 3000:3000 --name <container_name_you_prefer> <image_name>`. To check the current text on the application.
+* Run the image with the command: `Docker run -rm -d -p 3000:3000 --name <container_name_you_prefer> <image_name>`. To check the current text on the application.
 * Then, stop the container with the command: `docker stop <container_name>`.
 * Go to the path `capstone_project/hello-world`. Here are all the Ansible files.
 * Run the command: `ansible-playbook -i inventory.ini playbook.yaml`. This command runs the playbook and change the text from the App.js.
