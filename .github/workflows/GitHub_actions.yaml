@@ -1,0 +1,54 @@
+name: github actions
+
+on:
+  push: 
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+    github_act:
+              name: testing
+              runs-on: macos-latest
+              steps: 
+              - name: test checkout
+                uses: actions/checkout@v3
+              - name: test app
+                run: |
+                  cd capstone_project/hello-world/
+                  npm install
+                  npm test
+                  echo "Testing successful"
+                  
+    build_dockerfile:
+                     needs: [github_act]
+                     name: build docker image 
+                     runs-on: ubuntu-latest
+                     steps:
+                     - name: build the environment
+                       uses: actions/checkout@v3
+                     - name: install tools
+                       run: |
+                         sudo apt-get update
+                         sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+                         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+                     - name: checking docker installation
+                       run: docker -v
+                     - name: build image
+                       run: |
+                         cd capstone_project/hello-world/
+                         docker build -t capstone_p .
+                     - name: check docker image
+                       run: docker image ls 
+                     - name: Login to Docker Hub
+                       uses: docker/login-action@v2
+                       with:
+                          username: ${{ secrets.DOCKER_USERNAME }}
+                          password: ${{ secrets.DOCKER_PASSWORD }}
+                     - name: Push the image to DockerHub
+                       run: |
+                         docker tag capstone_p osvaldoponce01/capstone_project:0.0.1
+                         docker image ls
+                         docker push osvaldoponce01/capstone_project:0.0.1
+                       
+                         
+                     
