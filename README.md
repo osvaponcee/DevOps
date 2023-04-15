@@ -91,6 +91,9 @@ Here, you use Ansible to change the text from the application. This works in you
 * Check the http://localhost:3000 to verify the current text on the application and now you see "Hello Devops!" instead "Hello World!".  
 
 
+## Conclussion
+The project works fine and get all the points mentioned on the project instructions.
+
 
 
 
